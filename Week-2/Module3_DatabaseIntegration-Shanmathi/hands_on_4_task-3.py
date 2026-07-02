@@ -4,7 +4,7 @@ import time
 # Database Configuration
 db_config = {
     'user': 'root',
-    'password': 'Shanmathi123*', 
+    'password': 'enter_password', 
     'host': '127.0.0.1',
     'database': 'college_db'
 }
