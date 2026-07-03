@@ -1,0 +1,13 @@
+# Ignore compiled python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore local virtual environments if any exist here
+.venv/
+venv/
+ENV/
+
+# Ignore IDE config folders
+.vscode/
+.idea/

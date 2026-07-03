@@ -2,7 +2,7 @@
 # SQLAlchemy — Define Models and Connect
 
 # 75) Import necessary classes from sqlalchemy
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Date, Numeric
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Date,Boolean,Time, Numeric
 from sqlalchemy.orm import relationship, declarative_base, sessionmaker
 
 Base = declarative_base()
@@ -28,6 +28,7 @@ class Student(Base):
     email = Column(String(100), unique=True, nullable=False)
     enrollment_year = Column(Integer, nullable=False)
     department_id = Column(Integer, ForeignKey('departments.department_id'))
+    is_active = Column(Boolean, default=True, server_default="1")
     
     # 78) Relationships
     # Many-to-one relationship to Department
@@ -74,6 +75,14 @@ class Enrollment(Base):
     student = relationship('Student', back_populates='enrollments')
     course = relationship('Course', back_populates='enrollments')
 
+class CourseSchedule(Base):
+    __tablename__ = 'course_schedules'
+    
+    schedule_id = Column(Integer, primary_key=True, autoincrement=True)
+    course_id = Column(Integer, ForeignKey('courses.course_id', ondelete='CASCADE'), nullable=False)
+    day_of_week = Column(String(15), nullable=False)
+    start_time = Column(Time, nullable=False)
+    end_time = Column(Time, nullable=False)
 
 
 # 76) Define an engine connecting to your target database
