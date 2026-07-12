@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Accessible</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://unpkg.com/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <h1 class="site-title">Student Portal</h1>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">Menu</button>
+        <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="#hero-section" aria-current="page">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <section id="hero-section">
+            <h2>Welcome to the Student Portal</h2>
+            <p>Accessible course browsing with keyboard and screen reader support.</p>
+            <img src="https://via.placeholder.com/400x200/1e3a8a/ffffff?text=Student+Portal" alt="Students collaborating in a modern campus library" width="400" height="200">
+        </section>
+        <section id="courses">
+            <h2>My Courses</h2>
+            <div class="controls">
+                <label for="search-courses">Search courses</label>
+                <input type="search" id="search-courses" placeholder="Search courses..." aria-describedby="search-help">
+                <span id="search-help" class="sr-only">Filter courses by name</span>
+                <button type="button" id="sort-credits">Sort by Credits</button>
+            </div>
+            <p id="results-count" role="status" aria-live="polite"></p>
+            <div class="course-grid" role="list"></div>
+            <p id="total-credits"></p>
+            <div id="selected-course" role="region" aria-label="Selected course details"></div>
+        </section>
+        <section id="profile">
+            <h2>Student Profile</h2>
+            <form>
+                <label for="student-name">Full Name</label>
+                <input type="text" id="student-name" name="name" required>
+                <label for="student-email">Email</label>
+                <input type="email" id="student-email" name="email" required>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Student Portal. All rights reserved.</p>
+    </footer>
+    <script type="module" src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.cssVars) cssVars({});
+        });
+    </script>
+</body>
+</html>

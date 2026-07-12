@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Student Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="courses">
+            <h2>My Courses</h2>
+            <div id="courses-loading" class="spinner">Loading courses...</div>
+            <div id="courses-grid" class="course-grid"></div>
+        </section>
+        <section id="notifications">
+            <h2>Notifications</h2>
+            <button id="simulate-error">Simulate Error</button>
+            <button id="retry-notifications" style="display:none">Retry</button>
+            <div id="notifications-loading" class="spinner">Loading notifications...</div>
+            <div id="notifications-error" class="error-message"></div>
+            <div class="notification-list"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Student Portal. All rights reserved.</p>
+    </footer>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
