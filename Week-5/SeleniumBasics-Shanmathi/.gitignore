@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.png
+*.html
+.pytest_cache/
+.venv/
+venv/
+report.html
+*_failure.png
+playground_screenshot.png
