@@ -1,3 +1,5 @@
+
+```text
 automation_scripts/
 ├── setup_test.py              # HO4 Task 1 
 ├── navigation_test.py         # HO4 Task 2 
@@ -17,3 +19,4 @@ automation_scripts/
     ├── conftest.py            # HO6/7 shared fixtures
     ├── test_playground_pom.py # HO7 steps 55–57
     └── README.md              # HO7 step 59 — POM maintenance explanation
+```
